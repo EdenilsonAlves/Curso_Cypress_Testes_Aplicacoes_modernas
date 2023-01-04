@@ -1,0 +1,24 @@
+{
+  "name": "curso_cypress_testes_aplicacoes_modernas",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cypress:open": "cypress open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EdenilsonAlves/Curso_Cypress_Testes_Aplicacoes_modernas.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EdenilsonAlves/Curso_Cypress_Testes_Aplicacoes_modernas/issues"
+  },
+  "homepage": "https://github.com/EdenilsonAlves/Curso_Cypress_Testes_Aplicacoes_modernas#readme",
+  "dependencies": {
+    "cypress": "^3.6.0"
+  }
+}

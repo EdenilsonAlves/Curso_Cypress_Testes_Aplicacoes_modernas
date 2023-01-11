@@ -6,6 +6,7 @@ describe('Cypress basics', () => {
 
         cy.title().should('be.equal', 'Campo de Treinamento')   //Realizando assertiva de texto da PG 
         cy.title().should('contain', 'Campo')
+        //cy.pause()                                               //comando para pausa o teste nesta linha 
 
         cy.title()
             .should('be.equal', 'Campo de Treinamento')
@@ -13,9 +14,20 @@ describe('Cypress basics', () => {
 
         //TODO imprimir o log no console 
         //TODO escrever o log em um campo de texto
+    })
+    it('should find and interract with an element', () => {
+        cy.visit('https://www.wcaquino.me/cypress/componentes.html')
 
+        cy.get('#buttonSimple').
+            click()
+            .should('have.value', 'Obrigado!')     // realizando assertiva com o esperado após clicar 
     })
 })
+
+
+
+
+
 
 
 

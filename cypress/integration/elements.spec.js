@@ -43,26 +43,26 @@ describe('Work with basic elements', () => {
             .should('have.value', 'True')
     })
 
-    it('RadioButton', () => { 
+    it('RadioButton', () => {
         cy.get('#formSexoMasc')
-           .click()
-           .should('be.checked')                            //be.checked eu verifico se está checked                   
-        cy.get('formSexoFem').should('be.not.checked')      //be.not.checked eu verifico que não está checked
+            .click()
+            .should('be.checked')                                        //be.checked eu verifico se está selecionado                 
+        cy.get('formSexoFem').should('be.not.checked')                 //be.not.checked eu verifico que não está selecionado
 
-        cy.get("[name='formSexo']").should('have.length', 2)
-
-
+        cy.get("[name='formSexo']").should('have.length', 2)           //validei se existe 2 radionButoon na tela
     })
 
-
-
-
-
-
-
-
-
-
-
-
 })
+
+
+
+
+
+
+
+
+
+
+
+
+

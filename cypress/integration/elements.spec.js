@@ -11,12 +11,10 @@ describe('Work with basic elements', () => {
 
     it('Text', () => {
         cy.visit('https://www.wcaquino.me/cypress/componentes.html')
-
         cy.get('body').should('contain', 'Cuidado')
         cy.get('span').should('contain', 'Cuidado')
         cy.get('.facilAchar').should('have.text', 'Cuidado onde clica, muitas armadilhas...')
     })
-
     it('Links', () => {
         cy.get('a').first().click()
         cy.get('#resultado').should('have.text', 'Voltou!')
@@ -42,7 +40,6 @@ describe('Work with basic elements', () => {
             .type('False{selectall}True', { delay: 100 })
             .should('have.value', 'True')
     })
-
     it('RadioButton', () => {
         cy.get('#formSexoMasc')
             .click()
@@ -51,8 +48,48 @@ describe('Work with basic elements', () => {
 
         cy.get("[name='formSexo']").should('have.length', 2)           //validei se existe 2 radionButoon na tela
     })
+    it('Checkbox', () => {
+        cy.get('#formComidaFrango')
+            .click()
+            .should('be.checked')
 
+        cy.get('[name=formComidaFavorita]').click({ multiple: true })             //multiple:true eu clico em todos checkbox 
+        cy.get('#formComidaFrango').should('not.be.checked')
+        cy.get('#formComidaVegetariana').should('be.checked')
+    })
+    it('comboBox', () => {
+        cy.get('[data-test=dataEscolaridade]')
+            .select('2o grau completo')
+            .should('have.value', '2graucomp')
+
+        cy.get('[data-test=dataEscolaridade]')
+            .select('1graucomp')
+            .should('have.value', '1graucomp')
+    })
+    it('Combo Mutiplo', () => {
+        cy.get('[data-testid=dataEsportes]')
+            .select(['natacao', 'Corrida', 'nada'])        //array com mais de um value, assim seleciono todos os que estão dentro do array
+    })
 })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -9,12 +9,12 @@ describe('Work with alert', () => {
         cy.reload();                                              //metodo usado para recarregar a pagina 
     })
 
-    it('Alert', () => {
-        cy.get('#alert').click()
-        cy.on('window:alert', msg => {       //cy.on pega eventos que ocorre na tela 
-            console.log(msg)
-            expect(msg).to.be.equal('Alert Simples')
-        })
+    it.only('Alert', () => {
+        //cy.get('#alert').click()
+       //cy.on('window:alert', msg => {       //cy.on pega eventos que ocorre na tela 
+        //    expect(msg).to.be.equal('Alert Simples')
+       // })
+       cy.clickAlert('#alert', 'Alert Simples')          //estou validando a mesma alert, mas chamando o comando personalizado criado em support/commands.js
     })
 
     it('Alert com mock', () => {
@@ -56,7 +56,7 @@ describe('Work with alert', () => {
         })
         cy.get('#confirm').click()
     })
-    it.only('Validando mensagens', () => {
+    it('Validando mensagens', () => {
         const stub = cy.stub().as('alerta')
         cy.on('window:alert', stub)
         cy.get('#formCadastrar').click()

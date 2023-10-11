@@ -72,7 +72,7 @@ it('String', () => {
     expect(str).to.match(/\D+/)                       //pedidndo para verificar que não exista numeros 
 })
 
-if('Numbers', () => {
+it('Numbers', () => {
     const number = 4 
     const floatNumber = 5.2123
 

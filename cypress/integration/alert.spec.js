@@ -9,7 +9,7 @@ describe('Work with alert', () => {
         cy.reload();                                              //metodo usado para recarregar a pagina 
     })
 
-    it.only('Alert', () => {
+    it('Alert', () => {
         //cy.get('#alert').click()
        //cy.on('window:alert', msg => {       //cy.on pega eventos que ocorre na tela 
         //    expect(msg).to.be.equal('Alert Simples')
